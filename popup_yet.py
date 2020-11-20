@@ -34,7 +34,6 @@ class openGUI:
         name = filedialog.askdirectory(initialdir='.')
         self.depot2.insert(0, str(name))
 
-    #아직 안 된다.
     def org_img(self):
         info_list.organize_img(str(self.depot.get() + '/'), str(self.depot2.get() + '/'))
 
