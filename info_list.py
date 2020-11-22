@@ -16,20 +16,33 @@ def get_imageinfo(file_name):
 def organize_img(path1, path2):
     i = 0
     images_list = os.listdir(path1)
+    #image format
+    image_format = ['jpeg', 'jpg', 'png', 'gif']
     for each_img in images_list:
         num = each_img.find('.')
         file_name = each_img[:num]
-        #해당 폴더안에 파일들만
-        if each_img.find('.') != -1:
-            img_info = get_imageinfo(path1 + each_img)
-            img_info_m = img_info[:10]
-            dic1 = img_info_m[:4]
 
-        #생성할 디렉토리 경로와 중복되는 것이 있는지 검사 후 없으면 해당 경로에 디렉토리 생성
-        if not os.path.exists(path2 + dic1 + '/' + img_info_m):
-            os.makedirs(path2 + dic1 + '/' + img_info_m)
-            i = 0
-            shutil.copyfile(path1 + each_img, path2 + dic1 + '/' + img_info_m + '/' + str(i) + '_' + file_name + '.jpg')
+        #image 포맷을 가진 파일들만
+        if each_img[num+1:] in image_format:
+            #해당 폴더안에 파일들만
+            if each_img.find('.') != -1:
+                img_info = get_imageinfo(path1 + each_img)
+                img_info_m = img_info[:10]
+                dic1 = img_info_m[:4]
+
+            #생성할 디렉토리 경로와 중복되는 것이 있는지 검사 후 없으면 해당 경로에 디렉토리 생성
+            if not os.path.exists(path2 + dic1 + '/' + img_info_m):
+                os.makedirs(path2 + dic1 + '/' + img_info_m)
+                i = 0
+                shutil.copyfile(path1 + each_img, path2 + dic1 + '/' + img_info_m + '/' + str(i) + '_' + file_name + '.jpg')
+            else:
+                shutil.copyfile(path1 + each_img, path2 + dic1 + '/' + img_info_m + '/' + str(i) + '_' + file_name + '.jpg')
+            i += 1
+
+        #image 파일 아닌 것들
         else:
-            shutil.copyfile(path1 + each_img, path2 + dic1 + '/' + img_info_m + '/' + str(i) + '_' + file_name + '.jpg')
-        i += 1
+            if not os.path.exists(path2 + 'notimage_files'):
+                os.makedirs(path2 + 'notimage_files')
+                shutil.copyfile(path1 + each_img, path2 + 'notimage_files' + '/' + each_img)
+            else:
+                shutil.copyfile(path1 + each_img, path2 + 'notimage_files' + '/' + each_img)
