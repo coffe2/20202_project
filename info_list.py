@@ -16,14 +16,12 @@ def get_imageinfo(file_name):
 def organize_img(path1, path2):
     i = 0
     images_list = os.listdir(path1)
-    #image format
-    image_format = ['jpeg', 'jpg', 'png', 'gif']
     for each_img in images_list:
         num = each_img.find('.')
         file_name = each_img[:num]
 
         #image 포맷을 가진 파일들만
-        if each_img[num+1:] in image_format:
+        if each_img[num+1:] in ['jpeg', 'jpg', 'png', 'gif']:
             #해당 폴더안에 파일들만
             if each_img.find('.') != -1:
                 img_info = get_imageinfo(path1 + each_img)
