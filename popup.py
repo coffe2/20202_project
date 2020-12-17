@@ -36,7 +36,8 @@ class openGUI:
 
     def org_img(self):
         info_list.organize_img(str(self.depot.get() + '/'), str(self.depot2.get() + '/'))
-        tkinter.messagebox.showinfo('메세지 상자', '사진 정리가 완료되었습니다.\n(Organizing is complete.)')
+        tkinter.messagebox.showinfo('메세지 상자',
+                                    '사진 정리가 완료되었습니다.\n(Organizing is complete.)')
 
 
 if __name__ == "__main__":
