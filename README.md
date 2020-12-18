@@ -1,6 +1,6 @@
 ># Capstone Project
-SoonChunHyang University, Department of BigData Engineering
-member : Jang Bo Hyeon (bvcxz0525@naver.com), Lee Ga Hyun (rkgus1274@naver.com)
+>>SoonChunHyang University, Department of BigData Engineering  
+>>member : Jang Bo Hyeon (bvcxz0525@naver.com), Lee Ga Hyun (rkgus1274@naver.com)
 ---------
 
 ### 목적
