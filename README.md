@@ -1,7 +1,6 @@
 ># Capstone Project
-----------
-> SoonChunHyang University, Department of BigData Engineering  
-> member : Jang Bo Hyeon (bvcxz0525@naver.com), Lee Ga Hyun (rkgus1274@naver.com)
+ SoonChunHyang University, Department of BigData Engineering  
+ member : Jang Bo Hyeon (bvcxz0525@naver.com), Lee Ga Hyun (rkgus1274@naver.com)
 
 ### 목적
 수천개의 사진을 정리하는데 오랜시간이 사용된다. 사진으로부터 수정된 날짜를 가지고 날짜별로 정리하거나 사진들의 유사도를 측정하여 유사한 사진끼리 정리해준다. 
