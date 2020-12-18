@@ -1,7 +1,7 @@
-import sys
 from tkinter import *
 from tkinter import filedialog
-import info_list
+from before import info_list
+
 
 class openGUI:
 
